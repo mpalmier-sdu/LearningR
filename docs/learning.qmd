@@ -1,0 +1,68 @@
+---
+title: "Reproducible documents"
+author: "MP"
+format: html
+editor: visual
+---
+
+```{r first-code}
+2+2
+```
+
+```{r variable}
+weight_kilos<-100
+weight_kilos
+```
+
+```{r test}
+# Character vector
+c("a", "b", "c")
+# Logic vector
+c(TRUE, FALSE, FALSE)
+# Numeric vector
+c(1, 5, 6)
+# Factor vector (special types of character vectors)
+factor(c("low", "high", "medium", "high"))
+```
+
+```{r setup}
+library(tidyverse)
+
+```
+
+```{r markdown}
+# 
+```
+
+# Header 1
+
+Paragraph.
+
+## Header 2
+
+Paragraph.
+
+### Header 3
+
+Paragraph.
+
+*hello* **hello** he^ll^o he~ll~o
+
+-   hi
+-   hello
+-   hej
+
+## About me
+
+-   Mathilde Palmier
+-   Postdoctoral researcher
+-   Southern Denmark University
+
+I am a *scientist* and a **dancer**
+
+## Simple code
+
+```{r}
+3*3
+
+```
