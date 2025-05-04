@@ -27,6 +27,7 @@ factor(c("low", "high", "medium", "high"))
 
 ```{r setup}
 library(tidyverse)
+post_meal_data <- read_csv2(here::here("data/post-meal-insulin.csv"))
 
 ```
 
@@ -66,6 +67,14 @@ I am a *scientist* and a **dancer**
 3*3
 
 ```
+
 ## Testing for Git
+
 Hello I am learning how to use R
+
+## showing the data meal-insulin
+```{r}
+post_meal_data
+glimpse(post_meal_data)
+```
 
