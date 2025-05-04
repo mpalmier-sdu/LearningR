@@ -80,3 +80,45 @@ Hello I am learning how to use R
 post_meal_data
 glimpse(post_meal_data)
 ```
+## Plot one continuous data
+```{r}
+#|fig-cap: "Distribution of BMI."
+#| label: fig-bmi-histo
+ggplot(post_meal_data, aes(x = BMI)) +
+   geom_histogram()
+
+```
+
+##Exercise: Plot discrete variable
+```{r}
+#| fig-cap: "group"
+#| label: fig-group-histo
+ggplot(post_meal_data, aes(x =Group))+
+geom_bar()
+
+```
+@See @fig-glykemi-histo above for a cool plot!
+
+## Plorting two discrete variables
+
+```{r}
+ggplot(post_meal_data, aes(x = Group, fill = glykemi)) +
+  geom_bar()
+```
+```{r}
+
+ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
+  geom_bar()+
+  labs(title ="Graph", y="number of participants", fill="glykemi")
+  
+  
+```
+
+
+
+```{r}
+
+ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
+  geom_bar(position = position_dodge())
+```
+
