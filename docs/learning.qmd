@@ -6,11 +6,11 @@ editor: visual
 ---
 
 ```{r first-code}
-2+2
+2 + 2
 ```
 
 ```{r variable}
-weight_kilos<-100
+weight_kilos <- 100
 weight_kilos
 ```
 
@@ -30,11 +30,10 @@ factor(c("low", "high", "medium", "high"))
 #| warning: false
 library(tidyverse)
 post_meal_data <- read_csv2(here::here("data/post-meal-insulin.csv"))
-
 ```
 
 ```{r markdown}
-# 
+#
 ```
 
 # Header 1
@@ -66,8 +65,7 @@ I am a *scientist* and a **dancer**
 ## Simple code
 
 ```{r}
-3*3
-
+3 * 3
 ```
 
 ## Testing for Git
@@ -87,8 +85,7 @@ glimpse(post_meal_data)
 #|fig-cap: "Distribution of BMI."
 #| label: fig-bmi-histo
 ggplot(post_meal_data, aes(x = BMI)) +
-   geom_histogram()
-
+  geom_histogram()
 ```
 
 ##Exercise: Plot discrete variable
@@ -96,9 +93,8 @@ ggplot(post_meal_data, aes(x = BMI)) +
 ```{r}
 #| fig-cap: "glykemi"
 #| label: fig-group-histo
-ggplot(post_meal_data, aes(x =glykemi))+
-geom_bar()
-
+ggplot(post_meal_data, aes(x = glykemi)) +
+  geom_bar()
 ```
 
 See @fig-group-histo above for a cool plot!
@@ -111,23 +107,18 @@ ggplot(post_meal_data, aes(x = Group, fill = glykemi)) +
 ```
 
 ```{r}
-
 ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
-  geom_bar()+
-  labs(title ="Graph", y="number of participants", fill="glykemi")
-  
-  
+  geom_bar() +
+  labs(title = "Graph", y = "number of participants", fill = "glykemi")
 ```
 
 ```{r}
-
 ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
-  geom_bar(position = position_dodge())+
-  labs(fill="glykemi", y="number of participants")
+  geom_bar(position = position_dodge()) +
+  labs(fill = "glykemi", y = "number of participants")
 ```
 
 ```{r side by side figs}
-
 #| label: fig-bmi-glycemia
 #| fig-cap: "BMI and glycemia, side by side."
 #| fig-subcap:
@@ -139,8 +130,8 @@ ggplot(post_meal_data, aes(x = BMI)) +
 
 ggplot(post_meal_data, aes(x = glykemi)) +
   geom_bar()
-
 ```
+
 ```{r}
 #| label: fig-bmi-glycemia
 #| fig-cap: "BMI and glycemia, side by side."
@@ -154,4 +145,3 @@ ggplot(post_meal_data, aes(x = BMI)) +
 ggplot(post_meal_data, aes(x = glykemi)) +
   geom_bar()
 ```
-
