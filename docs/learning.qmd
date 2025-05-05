@@ -88,7 +88,7 @@ ggplot(post_meal_data, aes(x = BMI)) +
   geom_histogram()
 ```
 
-##Exercise: Plot discrete variable
+## Exercise: Plot discrete variable
 
 ```{r}
 #| fig-cap: "glykemi"
@@ -133,15 +133,16 @@ ggplot(post_meal_data, aes(x = glykemi)) +
 ```
 
 ```{r}
-#| label: fig-bmi-glycemia
-#| fig-cap: "BMI and glycemia, side by side."
-#| fig-subcap:
-#|   - "Distribution of BMI."
-#|   - "Number of those with glycemia."
-#| layout-ncol: 2
-ggplot(post_meal_data, aes(x = BMI)) +
-  geom_histogram()
+```
 
-ggplot(post_meal_data, aes(x = glykemi)) +
-  geom_bar()
+## Plotting two continuous variables
+
+```{r}
+#| fig-cap: "Scatterplot of BMI and the area under the curve for glucose."
+#| label: fig-bmi-auc-pg
+#| 
+ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
+  geom_point() +
+  labs(y = "glucose level") +
+  geom_smooth()
 ```
