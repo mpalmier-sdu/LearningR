@@ -1,6 +1,6 @@
 MP KI SDU
 Learning how to use R
-
+and how to use GitHub
 
 TODO: Add more to the title of your project here
 
