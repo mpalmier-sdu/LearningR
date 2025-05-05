@@ -80,7 +80,9 @@ Hello I am learning how to use R
 post_meal_data
 glimpse(post_meal_data)
 ```
+
 ## Plot one continuous data
+
 ```{r}
 #|fig-cap: "Distribution of BMI."
 #| label: fig-bmi-histo
@@ -90,14 +92,16 @@ ggplot(post_meal_data, aes(x = BMI)) +
 ```
 
 ##Exercise: Plot discrete variable
+
 ```{r}
-#| fig-cap: "group"
+#| fig-cap: "glykemi"
 #| label: fig-group-histo
-ggplot(post_meal_data, aes(x =Group))+
+ggplot(post_meal_data, aes(x =glykemi))+
 geom_bar()
 
 ```
-@See @fig-glykemi-histo above for a cool plot!
+
+See @fig-group-histo above for a cool plot!
 
 ## Plorting two discrete variables
 
@@ -105,6 +109,7 @@ geom_bar()
 ggplot(post_meal_data, aes(x = Group, fill = glykemi)) +
   geom_bar()
 ```
+
 ```{r}
 
 ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
@@ -114,11 +119,39 @@ ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
   
 ```
 
-
-
 ```{r}
 
 ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
-  geom_bar(position = position_dodge())
+  geom_bar(position = position_dodge())+
+  labs(fill="glykemi", y="number of participants")
+```
+
+```{r side by side figs}
+
+#| label: fig-bmi-glycemia
+#| fig-cap: "BMI and glycemia, side by side."
+#| fig-subcap:
+#|   - "Distribution of BMI."
+#|   - "Number of those with glycemia."
+#| layout-ncol: 2
+ggplot(post_meal_data, aes(x = BMI)) +
+  geom_histogram()
+
+ggplot(post_meal_data, aes(x = glykemi)) +
+  geom_bar()
+
+```
+```{r}
+#| label: fig-bmi-glycemia
+#| fig-cap: "BMI and glycemia, side by side."
+#| fig-subcap:
+#|   - "Distribution of BMI."
+#|   - "Number of those with glycemia."
+#| layout-ncol: 2
+ggplot(post_meal_data, aes(x = BMI)) +
+  geom_histogram()
+
+ggplot(post_meal_data, aes(x = glykemi)) +
+  geom_bar()
 ```
 
