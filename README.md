@@ -1,4 +1,6 @@
 MP KI SDU
+Learning how to use R
+
 
 TODO: Add more to the title of your project here
 
